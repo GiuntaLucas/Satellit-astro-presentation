@@ -1,11 +1,8 @@
 ---
-// export function getStaticPaths() {
-//   const urls = window.location.href.split('/');
-//   const id = urls[urls.length - 1];
-//   return [
-//     {params: {id}}
-//   ];
-// }
+export function getStaticPaths() {
+  return [
+  ];
+}
 const { id } = Astro.params;
 
 console.log(id);

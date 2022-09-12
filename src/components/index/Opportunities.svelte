@@ -1,15 +1,15 @@
 <script>
-  import { collection, where, query } from "firebase/firestore";
+  import { collection, getDocs } from "firebase/firestore";
   import { firestore } from "../../firebase";
-  import { collectionData } from "rxfire/firestore";
-  import { startWith, tap } from "rxjs/operators";
-import OpportunityCard from "./OpportunityCard.svelte";
+  import { map, startWith, tap } from "rxjs/operators";
+  import OpportunityCard from "./OpportunityCard.svelte";
+  import { from } from "rxjs";
 
-  const opportunitiesQuery = query(collection(firestore, "opportunities"));
-
-  const opportunities = collectionData(opportunitiesQuery, {idField: "id"}).pipe(
-    tap(x => console.log(x)),
-    startWith([])
+  const opportunities = from(getDocs(collection(firestore, "opportunities"))).pipe(
+    startWith([]),
+    map(x => {
+      return x.docs.map(e => e.data());
+    }), 
   );
 </script>
 
@@ -101,11 +101,11 @@ import OpportunityCard from "./OpportunityCard.svelte";
         Feel free to contact us spontaneously.
       </p>
       <div class="jobs-container">
-
+        {#if $opportunities}
             {#each $opportunities as opportunity}
                 <OpportunityCard {...opportunity}/>
             {/each}
-
+        {/if}
       </div>
     </div>
   </div>
