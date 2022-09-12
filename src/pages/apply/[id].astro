@@ -1,7 +1,21 @@
 ---
-export function getStaticPaths() {
-  return [
-  ];
+import { query, collection, getDocs } from "firebase/firestore";
+import { firestore } from "../../firebase";
+
+export async function getStaticPaths() {
+  const q = query(collection(firestore, "opportunities"));
+  const opportunities = await getDocs(q);
+  const data = opportunities.docs.map((x) => {
+    return { id: x.id, ...x.data() };
+  });
+  return data.map((e) => ({
+    params: {
+      id: e.id,
+    },
+    props: {
+      opportunity: e,
+    },
+  }));
 }
 const { id } = Astro.params;
 

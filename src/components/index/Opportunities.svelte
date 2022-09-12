@@ -1,14 +1,20 @@
 <script>
-  import { collection, getDocs } from "firebase/firestore";
+  import { query, collection, getDocs } from "firebase/firestore";
   import { firestore } from "../../firebase";
   import { map, startWith, tap } from "rxjs/operators";
   import OpportunityCard from "./OpportunityCard.svelte";
   import { from } from "rxjs";
+  
+  const q = query(collection(firestore, "opportunities"));
 
-  const opportunities = from(getDocs(collection(firestore, "opportunities"))).pipe(
-    startWith([]),
-    map(x => {
-      return x.docs.map(e => e.data());
+
+  const opportunities = from(getDocs(q)).pipe(
+    map(datas => {
+      return datas.docs?.map(e => {
+        console.log(e)
+        return { id: e.id, ...e.data() };
+        
+      });
     }), 
   );
 </script>
