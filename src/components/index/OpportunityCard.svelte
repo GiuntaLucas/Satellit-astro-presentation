@@ -1,15 +1,16 @@
 <script>
   export let name;
+  export let id;
 </script>
 
 <div class="card job-line-first">
   <div class="card-header" id="heading1">
     <a
-      href="apply.html?jobId=eddef470-af6c-40dd-9aff-29ec8affa5e5"
+      href={`/apply/${id}`}
       class="a-btn ltc-white">{name}</a
     >
     <a
-      href="apply.html?jobId=eddef470-af6c-40dd-9aff-29ec8affa5e5"
+    href={`/apply/${id}`}
       class="a-btn a-block link-right">Apply<br /></a
     >
   </div>

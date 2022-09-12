@@ -7,7 +7,8 @@ import OpportunityCard from "./OpportunityCard.svelte";
 
   const opportunitiesQuery = query(collection(firestore, "opportunities"));
 
-  const opportunities = collectionData(opportunitiesQuery, "id").pipe(
+  const opportunities = collectionData(opportunitiesQuery, {idField: "id"}).pipe(
+    tap(x => console.log(x)),
     startWith([])
   );
 </script>
