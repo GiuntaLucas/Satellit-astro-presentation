@@ -10,3 +10,10 @@ body {
   display: inline-block;
   overflow: hidden;
 }
+.white-line-smalll {
+  position: absolute;
+  top: 65px;
+  overflow: hidden;
+  left: 100px;
+  margin-bottom: 25px;
+}
