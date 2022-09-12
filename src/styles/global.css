@@ -1,3 +1,12 @@
 body {
-    font-family: 'Lato', sans-serif;
-  }
+  font-family: "Lato", sans-serif;
+}
+
+
+.green-line {
+  position: relative;
+  right: -45%;
+  top: -20px;
+  display: inline-block;
+  overflow: hidden;
+}
