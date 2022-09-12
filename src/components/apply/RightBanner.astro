@@ -1,0 +1,43 @@
+---
+export interface Props {
+  sector: string;
+  experience: string;
+  duration: string;
+  startingFrom: string;
+}
+
+const { sector, experience, duration, startingFrom } = Astro.props;
+---
+
+<div style="width: 200px">
+    <ul>
+        <li>
+          <p id="sector">
+            <strong>SECTOR<br /></strong>
+            {sector}
+          </p>
+        </li>
+      
+        <li>
+          <p id="experience">
+            <strong>EXPERIENCE<br /></strong>
+            {experience}
+          </p>
+        </li>
+      
+        <li>
+          <p id="fromto">
+            <strong>STARTING FROM<br /></strong>
+            {startingFrom}
+          </p>
+        </li>
+      
+        <li>
+          <p id="fromto">
+            <strong>DURATION<br /></strong>
+            {duration}
+          </p>
+        </li>
+      </ul>
+</div>
+

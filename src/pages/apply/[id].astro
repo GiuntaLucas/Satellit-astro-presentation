@@ -1,6 +1,14 @@
 ---
-import { query, collection, getDocs } from "firebase/firestore";
+import Opportunities from "../../components/shared/Opportunities.svelte";
+
+import { query, collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { firestore } from "../../firebase";
+import ApplyLayout from "../../layouts/ApplyLayout.astro";
+import Technologies from "../../components/apply/Technologies.astro";
+import Details from "../../components/apply/Details.astro";
+import Responsabilities from "../../components/apply/Responsabilities.astro";
+import NormalDay from "../../components/apply/NormalDay.astro";
+import RightBanner from "../../components/apply/RightBanner.astro";
 
 export async function getStaticPaths() {
   const q = query(collection(firestore, "opportunities"));
@@ -19,7 +27,23 @@ export async function getStaticPaths() {
 }
 const { id } = Astro.params;
 
-console.log(id);
+const snap = await getDoc(doc(firestore, 'opportunities', id.toString()))
+const opportunity = snap.data();
+console.log(opportunity)
+
 ---
 
-<h1>{id}</h1>
+<ApplyLayout job={opportunity.name} location={opportunity.location}>
+    <div class="container" style="display: flex;">
+        <div style="flex-grow: 99;">
+            <Details description={opportunity.description}/>
+            <Responsabilities responsabilities={opportunity.responsabilities}/>
+            <NormalDay infos={opportunity.normalDay}/>
+        </div>
+        <div style="padding-top: 4.5em; padding-left: 5em;">
+            <RightBanner duration={opportunity.duration} experience={opportunity.experience} sector={opportunity.sector} startingFrom={opportunity.startingFrom}/>
+        </div>
+    </div>
+    <Technologies technologies={opportunity.skills}/>
+</ApplyLayout>
+

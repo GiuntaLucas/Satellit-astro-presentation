@@ -11,7 +11,6 @@
   const opportunities = from(getDocs(q)).pipe(
     map(datas => {
       return datas.docs?.map(e => {
-        console.log(e)
         return { id: e.id, ...e.data() };
         
       });

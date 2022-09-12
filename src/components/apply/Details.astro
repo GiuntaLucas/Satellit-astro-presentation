@@ -1,0 +1,14 @@
+---
+export interface Props {
+    description: string;
+}
+
+const {description} = Astro.props;
+
+---
+<div style="padding-top: 2em; padding-bottom: 2em;">
+    <h3 class="mg-md">
+        Details of the offer
+    </h3>
+    <p>{description}</p>
+</div>
