@@ -77,6 +77,7 @@
     align-items: center;
     justify-content: center;
     left: 5%;
+    z-index: 9;
   }
   .nav-item {
     text-align: center;
