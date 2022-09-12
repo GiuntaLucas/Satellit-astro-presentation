@@ -112,15 +112,6 @@ import OpportunityCard from "./OpportunityCard.svelte";
 
 
 <style>
-  .h2-style {
-    font-family: "acumin-pro";
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 65px;
-    background-color: transparent;
-    stroke: transparent;
-    width: 100%;
-  }
   .mg-md {
     margin-top: 10px;
     margin-bottom: 20px;
