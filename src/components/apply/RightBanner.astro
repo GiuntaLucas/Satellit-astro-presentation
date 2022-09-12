@@ -10,34 +10,61 @@ const { sector, experience, duration, startingFrom } = Astro.props;
 ---
 
 <div style="width: 200px">
-    <ul>
+  <ul>
+    {
+      sector && (
         <li>
           <p id="sector">
-            <strong>SECTOR<br /></strong>
+            <strong>
+              SECTOR
+              <br />
+            </strong>
             {sector}
           </p>
         </li>
-      
+      )
+    }
+
+    {
+      experience && (
         <li>
           <p id="experience">
-            <strong>EXPERIENCE<br /></strong>
+            <strong>
+              EXPERIENCE
+              <br />
+            </strong>
             {experience}
           </p>
         </li>
-      
+      )
+    }
+
+    {
+      startingFrom && (
         <li>
           <p id="fromto">
-            <strong>STARTING FROM<br /></strong>
+            <strong>
+              STARTING FROM
+              <br />
+            </strong>
             {startingFrom}
           </p>
         </li>
-      
+      )
+    }
+
+    {
+      duration && (
         <li>
           <p id="fromto">
-            <strong>DURATION<br /></strong>
+            <strong>
+              DURATION
+              <br />
+            </strong>
             {duration}
           </p>
         </li>
-      </ul>
+      )
+    }
+  </ul>
 </div>
-
