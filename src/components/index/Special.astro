@@ -1,3 +1,28 @@
+---
+import Card from "./Card.astro";
+
+const cards = [
+  {
+    link: "https://www.satellit.be/img/noun-satelite-3849084.png",
+    title: "Active founders",
+    cssClass: 'col-md-4 wmus-boxes col-lg-4',
+    description: "Our founders still get their hands dirty : following the project and training new recruits.",
+  },
+  {
+    link: "https://www.satellit.be/img/noun-satelite-3851812.png",
+    title: "Mentors",
+    cssClass: 'col-md-4 wmus-boxes col-lg-4 wmus2',
+    description: "A team of mentors meet the squads every week. To provide support on the personal and technical level.",
+  },
+  {
+    link: "https://www.satellit.be/img/noun-astronomy-1275042.png",
+    title: "Connected",
+    cssClass: 'col-md-4 wmus-boxes col-lg-4',
+    description: "Our squads are always connected to the base, never lost in space.",
+  },
+];
+---
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -61,11 +86,17 @@
       </p>
     </div>
   </div>
+  <div class="row">
+    {cards.map(card => 
+        (<Card cssClass={card.cssClass} description={card.description} link={card.link} title={card.title} />)
+    )}
+    
+  </div>
 </div>
 
 <style>
-    .black-link {
-    color: #1A191D!important;
+  .black-link {
+    color: #1a191d !important;
     font-weight: 700;
     font-size: 21px;
     line-height: 75px;
@@ -75,16 +106,16 @@
     padding-right: 20px;
     padding-top: 3px;
     padding-bottom: 3px;
-}
-    .small-center {
+  }
+  .small-center {
     width: 45%;
     text-align: center;
-}
-.big-p {
+  }
+  .big-p {
     font-size: 21px;
     line-height: 30px;
     margin-top: 25px;
-}
+  }
   .green-line {
     position: relative;
     right: -45%;
