@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/shared/Navbar.svelte";
-import Footer from "../components/shared/Footer.astro";
 import Header from "../components/ApplyLayout/Header.astro";
-import Opportunities from "../components/shared/Opportunities.svelte";
+import Opportunities from "../components/shared/Opportunities.astro";
+import ScrollTop from "../components/shared/ScrollTop.svelte";
 
 export interface Props {
   job: string;
@@ -66,8 +66,8 @@ const { job, location } = Astro.props;
       </div>
     </div>
     <div style="margin-bottom: 2em;">
-        <Opportunities client:load />
-
+        <Opportunities/>
     </div>
+    <ScrollTop client:load/>
   </body>
 </html>

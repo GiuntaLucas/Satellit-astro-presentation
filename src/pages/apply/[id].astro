@@ -1,6 +1,4 @@
 ---
-import Opportunities from "../../components/shared/Opportunities.svelte";
-
 import { query, collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import ApplyLayout from "../../layouts/ApplyLayout.astro";
@@ -29,7 +27,6 @@ const { id } = Astro.params;
 
 const snap = await getDoc(doc(firestore, 'opportunities', id.toString()))
 const opportunity = snap.data();
-console.log(opportunity)
 
 ---
 

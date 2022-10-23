@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from "../components/shared/Navbar.svelte";
 import Footer from "../components/shared/Footer.astro";
+import ScrollTop from "../components/shared/ScrollTop.svelte";
 
 export interface Props {
   title: string;
@@ -40,5 +41,6 @@ const { title } = Astro.props;
     <Navbar client:load/>
     <slot />
     <Footer/>
+    <ScrollTop client:load/>
   </body>
 </html>

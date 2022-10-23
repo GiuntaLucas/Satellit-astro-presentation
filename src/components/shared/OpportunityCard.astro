@@ -1,7 +1,11 @@
-<script>
-  export let name;
-  export let id;
-</script>
+---
+export interface Props {
+  name: string;
+  id: string;
+}
+
+const { name, id } = Astro.props;
+---
 
 <div class="card job-line-first">
   <div class="card-header" id="heading1">
