@@ -23,10 +23,8 @@ export async function getStaticPaths() {
     },
   }));
 }
-const { id } = Astro.params;
 
-const snap = await getDoc(doc(firestore, 'opportunities', id.toString()))
-const opportunity = snap.data();
+const opportunity = Astro.props.opportunity;
 
 ---
 
