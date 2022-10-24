@@ -8,21 +8,6 @@ import Responsabilities from "../../components/apply/Responsabilities.astro";
 import NormalDay from "../../components/apply/NormalDay.astro";
 import RightBanner from "../../components/apply/RightBanner.astro";
 
-export async function getStaticPaths() {
-  const q = query(collection(firestore, "opportunities"));
-  const opportunities = await getDocs(q);
-  const data = opportunities.docs.map((x) => {
-    return { id: x.id, ...x.data() };
-  });
-  return data.map((e) => ({
-    params: {
-      id: e.id,
-    },
-    props: {
-      opportunity: e,
-    },
-  }));
-}
 const { id } = Astro.params;
 
 const snap = await getDoc(doc(firestore, 'opportunities', id.toString()))
