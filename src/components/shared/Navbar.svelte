@@ -1,4 +1,6 @@
 <script>
+  import { scale } from "svelte/transition";
+
   let display = false;
   function toggle() {
     display =! display
@@ -27,7 +29,8 @@
           </button>
           
           {#if display}
-            <div class="navbar-collapse animate__animated animate__slideInRight animate__faster fullscreen-nav">
+            <div in:scale out:scale={{ duration: 500 }}
+            class="navbar-collapse fullscreen-nav">
               <button on:click={toggle} type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
