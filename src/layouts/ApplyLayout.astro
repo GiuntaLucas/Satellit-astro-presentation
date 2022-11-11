@@ -34,7 +34,7 @@ const { job, location } = Astro.props;
     <title>Satellit - Apply</title>
   </head>
   <body>
-    <Navbar client:load />
+    <Navbar/>
     <Header job={job} location={location} />
     <div style="display: flex; flex-direction: column;">
       <slot />
@@ -62,6 +62,6 @@ const { job, location } = Astro.props;
     <div style="margin-bottom: 2em;">
         <Opportunities/>
     </div>
-    <ScrollTop client:load/>
+    <ScrollTop/>
   </body>
 </html>
