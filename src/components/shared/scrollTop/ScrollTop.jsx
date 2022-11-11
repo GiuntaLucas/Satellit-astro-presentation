@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react"
+import {useEffect, useState} from "react";
 import './ScrollTop.css';
 
-export const ScrollTop = () => {
+export default function ScrollTop() {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
