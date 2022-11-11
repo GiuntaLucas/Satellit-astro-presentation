@@ -1,0 +1,40 @@
+export default function BusinessExplanation() {
+    const business = [
+        {
+          title: "Business transformation",
+          description:
+            "The SATELLIT business transformation approach is based on the study of the entire enterprise by an enterprise architect and his business, information (data &amp; application) and technical architect teams. They iteratively deliver high-level business concepts (goals, objectives, vision, …), middle-level information system concepts (conceptual data diagrams, processes, roles, actors, application portfolio…) and low-level technology concepts (logical data, infrastructure, deployment, …) prioritized by the business (architecture board) and structured within a centralized repository used as a knowledge hub (TOGAF framework).&nbsp;The goal is to have a sufficiently accurate view of the business&nbsp;processes, applications and organization to focus on the transformation itself. This focus on change involves all the disciplines contributing to business transformations: Strategy Development bridges the gap between abstract high-level strategies and concrete operational decisions and provides feedback on the feasibility and impact on strategy choice. Capability-Based Planning is the pivot between strategy and realization. Enterprise Portfolio Management provides instruments for selecting areas for investment and change initiatives to realize the enterprise strategy. Program Management manages the change initiatives from the perspective of business outcomes.",
+        },
+        {
+          title: "Custom application development",
+          description:
+            "Designed with your business in mind. Sometimes you have to build a customized solution from the ground up. At Satellit, our team uses an Agile process and years of experience to deliver unique solutions that work with diverse platforms, devices and technologies. We have a track record of success with most shapes and sizes of&nbsp;business.&nbsp;The results speak for themselves: custom applications that are adopted quickly by users and applauded by businesses.As a Microsoft Gold Partner we are mastering the Microsoft Technology Stack: Azure, Devops, .NET, Business Intelligence, Artificial Intelligence, IoT, Big Data, ....",
+        },
+        {
+          title: "Digital transformation",
+          description:
+            "Align your Business and your Technology Capability : the ongoing digital transformation process is the change associated with the application of digital technology in all aspects of human society. The transformation stage means that digital usage inherently enables new types of innovation and creativity, rather&nbsp;than&nbsp;simply enhancing and supporting traditional methods. As cloud computing, artificial intelligence and machine learning, the internet of things, analytics, blockchain, robotics, augmented reality and virtual reality mature and converge, the possibilities of digital transformation are only limited by human imagination.",
+        },
+      ];
+
+      return (
+        <div class="container">
+        {
+            business.map((x) => (
+                <div class="row">
+                    <div class="col">
+                        <p class="green-title">
+                        {x.title}
+                        </p>
+                        <div class="tab-content content-tab">
+                        <p class="tab-text">
+                            {x.description}
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+        </div>
+      )
+}
