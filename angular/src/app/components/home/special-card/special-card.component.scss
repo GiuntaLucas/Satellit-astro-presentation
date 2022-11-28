@@ -1,0 +1,54 @@
+.wmus2 {
+    margin-top: 40px!important;
+  }
+  .wmus-boxes {
+    height: fit-content;
+    box-shadow: 5px 4px 25px #c5c5c5;
+    display: block;
+    position: relative;
+    background-color: #ffffff;
+    margin: 0px 1% 0px 1%;
+    padding: 60px 2px 60px 2px;
+    border-radius: 10px 10px 10px 10px;
+  }
+  .wmus-boxes::before {
+    background-clip: padding-box;
+    box-sizing: content-box;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: linear-gradient(to left, #00ba82, #6f7cff);
+    padding: 2px;
+    border: 2px;
+    top: -2px;
+    left: -2px;
+    position: absolute;
+    z-index: -1;
+  }
+  .tc-dark-jungle-green {
+    color: #1a191d !important;
+  }
+  .h5-style {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+  }
+  .mg-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .p-style {
+    width: 91.67%;
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+  .big-p {
+    font-size: 21px;
+    line-height: 30px;
+    width: 80.23%;
+    margin-top: 25px;
+  }
