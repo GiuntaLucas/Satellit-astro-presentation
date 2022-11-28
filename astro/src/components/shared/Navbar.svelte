@@ -55,9 +55,6 @@
                 <li class="nav-item nav-link">
                   <a href="/contact" class="nav-link a-btn">Contact us</a>
                 </li>
-                <li class="nav-item nav-link">
-                  <a href="/portal" class="nav-link a-btn">Login</a>
-                </li>
               </ul>
             </div>
           {/if}
