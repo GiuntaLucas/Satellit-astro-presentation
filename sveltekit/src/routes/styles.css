@@ -1,0 +1,54 @@
+body {
+	font-family: "Lato", sans-serif;
+  }
+  .h1-style {
+	font-weight: 700;
+	font-size: 65px;
+	color: #FFFFFF!important;
+	line-height: 70px;
+	position: relative;
+	width: 120%;
+  }
+  
+  .green-line {
+	position: relative;
+	right: -45%;
+	top: -20px;
+	display: inline-block;
+	overflow: hidden;
+  }
+  .white-line-smalll {
+	position: absolute;
+	top: 65px;
+	overflow: hidden;
+	left: 100px;
+	margin-bottom: 25px;
+  }
+  .h2-style {
+	font-weight: 700;
+	font-size: 60px;
+	line-height: 65px;
+	background-color: transparent;
+	stroke: transparent;
+	width: 100%;
+  }
+  .p-bloc-6-style {
+	font-size: 24px;
+	width: 100%;
+	line-height: 32px;
+	font-weight: 400;
+	padding-top: 50px;
+  }
+  .p-bloc-3-style {
+	width: 100%;
+	font-size: 18px;
+	line-height: 26px;
+  }
+  .mg-lg {
+	margin-top: 10px;
+	margin-bottom: 40px;
+  }
+  .p-90-style {
+	font-size: 18px;
+	width: 100%;
+  }
